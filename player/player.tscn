@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://07qm4w0xtu5s"]
+[gd_scene load_steps=7 format=3 uid="uid://07qm4w0xtu5s"]
 
 [ext_resource type="Script" uid="uid://culmapmwppxfn" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="2_rkbax"]
@@ -6,12 +6,49 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 size = Vector2(128, 127)
 
+[sub_resource type="Curve" id="Curve_rkbax"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5833333, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_g1dw6"]
+curve = SubResource("Curve_rkbax")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yw30f"]
+particle_flag_disable_z = true
+radial_velocity_min = 499.99997
+radial_velocity_max = 499.99997
+gravity = Vector3(0, 98, 0)
+scale_min = 0.0
+scale_max = 0.39999998
+alpha_curve = SubResource("CurveTexture_g1dw6")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_oul6g")
+coyote_time = 0.1
+speed = 100.0
+ground_friction = 10.0
+air_resistance = 7.0
+jump_velocity = 30.0
+gravity_multiplier = 10.0
+max_variable_jump_frames = 10
+dash_strength = 50.0
+dash_cooldown = 1.0
+wall_climb_strength = 0.75
+has_double_jump = true
+has_dash = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_g1dw6")
+
+[node name="DashTrail" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 500
+texture = ExtResource("2_rkbax")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.15
+process_material = SubResource("ParticleProcessMaterial_yw30f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rkbax")
@@ -20,3 +57,9 @@ texture = ExtResource("2_rkbax")
 process_callback = 0
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true

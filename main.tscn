@@ -6,11 +6,13 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(184, 312)
 
 [node name="Block" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(272, 472)
-scale = Vector2(5, 1)
+scale = Vector2(50, 1)
 
 [node name="Block2" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(1136, 384)
-scale = Vector2(5, 1)
+position = Vector2(3512, -1216)
+rotation = 1.5707964
+scale = Vector2(50, 1)
