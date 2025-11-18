@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=4 uid="uid://dtmunp61s405m"]
+[gd_scene load_steps=6 format=4 uid="uid://dtmunp61s405m"]
 
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_pqqg8"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_0srwa"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="3_0srwa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_pqqg8")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 2:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
@@ -24,41 +26,46 @@ texture_region_size = Vector2i(8, 8)
 
 [sub_resource type="TileSet" id="TileSet_bt44k"]
 tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jirdo")
 
-[node name="Level_1" type="Node2D"]
+[node name="Level_2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
+scale = Vector2(12, 12)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAaAAAAAAABAAAAAAAbAAAAAAABAAAAAAAcAAAAAAABAAAAAAAdAAAAAAABAAAAAAAeAAAAAAABAAAAAAAPAP3/AAABAAAAAAAPAPz/AAABAAAAAAAPAPv/AAABAAAAAAAPAPr/AAABAAAAAAAPAPn/AAABAAAAAAAPAPj/AAABAAAAAAAKAPn/AAABAAAAAAAKAPj/AAABAAAAAAAKAPf/AAABAAAAAAAKAPb/AAABAAAAAAAKAPX/AAABAAAAAAAKAPT/AAABAAAAAAAPAPf/AAABAAAAAAAKAPP/AAABAAAAAAAPAPT/AAABAAAAAAAPAPP/AAABAAAAAAAPAPL/AAABAAAAAAAPAPH/AAABAAAAAAAPAPD/AAABAAAAAAAPAO//AAABAAAAAAAPAO7/AAABAAAAAAAKAPD/AAABAAAAAAAKAO//AAABAAAAAAAKAO7/AAABAAAAAAAKAO3/AAABAAAAAAAKAOz/AAABAAAAAAAKAOv/AAABAAAAAAAKAOr/AAABAAAAAAAKAOn/AAABAAAAAAAKAOj/AAABAAAAAAAKAOf/AAABAAAAAAAPAOr/AAABAAAAAAARAOr/AAABAAAAAAAQAOr/AAABAAAAAAASAOr/AAABAAAAAAATAOr/AAABAAAAAAAUAOr/AAABAAAAAAAVAOr/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_bt44k")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 13.0
-offset_top = -77.0
-offset_right = 272.0
-offset_bottom = -54.0
+offset_left = -1387.0
+offset_top = -833.0
+offset_right = 1123.0
+offset_bottom = -693.0
 theme_override_fonts/font = ExtResource("2_0srwa")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 80
 text = "Level 1 - teaches player how to wall climb / wall jump"
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 1
-offset_left = 4.0
-offset_top = -25.0
-offset_right = 35.0
-offset_bottom = -11.0
+offset_left = 152.0
+offset_top = -247.0
+offset_right = 412.0
+offset_bottom = -107.0
 theme_override_fonts/font = ExtResource("2_0srwa")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 80
 text = "start"
 
 [node name="Label3" type="Label" parent="."]
 texture_filter = 1
-offset_left = 139.0
-offset_top = -192.0
-offset_right = 170.0
-offset_bottom = -178.0
+offset_left = 1752.0
+offset_top = -2257.0
+offset_right = 1783.0
+offset_bottom = -2243.0
 theme_override_fonts/font = ExtResource("2_0srwa")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 80
 text = "end"
+
+[node name="Player" parent="." instance=ExtResource("3_0srwa")]
+position = Vector2(349, -110)
