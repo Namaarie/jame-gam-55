@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://culmapmwppxfn" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="2_rkbax"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" path="res://player/spritesheets/player_dash.png" id="3_8t03j"]
 [ext_resource type="Texture2D" path="res://player/spritesheets/player_run.png" id="3_g1dw6"]
 [ext_resource type="Texture2D" path="res://player/spritesheets/player_die.png" id="4_2ieo8"]
@@ -10,6 +11,16 @@
 [ext_resource type="Texture2D" path="res://player/spritesheets/player_hurt.png" id="7_kb6p2"]
 [ext_resource type="Texture2D" path="res://player/spritesheets/player_normal_attack.png" id="8_wodsf"]
 [ext_resource type="Texture2D" path="res://player/spritesheets/player_up_attack.png" id="10_32hag"]
+=======
+[ext_resource type="Texture2D" uid="uid://hknh14rc5r2n" path="res://player/spritesheets/player_dash.png" id="3_8t03j"]
+[ext_resource type="Texture2D" uid="uid://bd31g8vkerdgt" path="res://player/spritesheets/player_run.png" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://cq5us0y5wfys" path="res://player/spritesheets/player_die.png" id="4_2ieo8"]
+[ext_resource type="Texture2D" uid="uid://b2mvsclwckln1" path="res://player/spritesheets/player_down_attack.png" id="5_ebec5"]
+[ext_resource type="Texture2D" uid="uid://bvn03gurpmetn" path="res://player/spritesheets/player_jump_and_fall.png" id="6_yllr7"]
+[ext_resource type="Texture2D" uid="uid://fcjhfwjsb662" path="res://player/spritesheets/player_hurt.png" id="7_kb6p2"]
+[ext_resource type="Texture2D" uid="uid://clx0dwqll3bx5" path="res://player/spritesheets/player_normal_attack.png" id="8_wodsf"]
+[ext_resource type="Texture2D" uid="uid://gj13iu7tvq84" path="res://player/spritesheets/player_up_attack.png" id="10_32hag"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 size = Vector2(128, 127)
@@ -354,8 +365,14 @@ texture_filter = 1
 position = Vector2(9, 46)
 scale = Vector2(12, 12)
 sprite_frames = SubResource("SpriteFrames_rgyib")
+<<<<<<< Updated upstream
 animation = &"die"
 frame_progress = 0.20675278
+=======
+animation = &"dash"
+frame = 3
+frame_progress = 0.7532697
+>>>>>>> Stashed changes
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
