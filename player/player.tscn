@@ -354,9 +354,8 @@ texture_filter = 1
 position = Vector2(13, 37)
 scale = Vector2(12, 12)
 sprite_frames = SubResource("SpriteFrames_n0b8q")
-animation = &"up_attack"
-frame = 4
-frame_progress = 0.8427533
+animation = &"run"
+autoplay = "run"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
