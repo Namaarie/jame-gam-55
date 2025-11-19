@@ -1,0 +1,172 @@
+[gd_scene load_steps=6 format=4 uid="uid://cpmxahgv1agul"]
+
+[ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_pltw0"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_qskt5"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="3_8tsbn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
+texture = ExtResource("1_pltw0")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bt44k"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jirdo")
+
+[node name="Level_6" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(12, 12)
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAaAAAAAAABAAAAAAAbAAAAAAABAAAAAAAcAAAAAAABAAAAAAAdAAAAAAABAAAAAAAeAAAAAAABAAAAAAAfAAAAAAABAAAAAAAgAAAAAAABAAAAAAAhAAAAAAABAAAAAAAiAAAAAAABAAAAAAAjAAAAAAABAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAmAAAAAAABAAAAAAAnAAAAAAABAAAAAAAoAAAAAAABAAAAAAApAAAAAAABAAAAAAAqAAAAAAABAAAAAAArAAAAAAABAAAAAAAsAAAAAAABAAAAAAAtAAAAAAABAAAAAAAuAAAAAAABAAAAAAAvAAAAAAABAAAAAAAwAAAAAAABAAAAAAAxAAAAAAABAAAAAAAyAAAAAAABAAAAAAAzAAAAAAABAAAAAAA0AAAAAAABAAAAAAA1AAAAAAABAAAAAAA2AAAAAAABAAAAAAA3AAAAAAABAAAAAAA4AAAAAAABAAAAAAA5AAAAAAABAAAAAAA6AAAAAAABAAAAAAA7AAAAAAABAAAAAAAGAPf/AAABAAAAAAAHAPf/AAABAAAAAAAIAPf/AAABAAAAAAAJAPf/AAABAAAAAAAVAPP/AAABAAAAAAAWAPP/AAABAAAAAAAXAPP/AAABAAAAAAAPAPD/AAABAAAAAAAQAPD/AAABAAAAAAARAPD/AAABAAAAAAAVAO3/AAABAAAAAAAWAO3/AAABAAAAAAAXAO3/AAABAAAAAAAPAPX/AAABAAAAAAAQAPX/AAABAAAAAAARAPX/AAABAAAAAAAdAO3/AAABAAAAAAAeAO3/AAABAAAAAAAfAO3/AAABAAAAAAAlAO3/AAABAAAAAAAmAO3/AAABAAAAAAAnAO3/AAABAAAAAAAtAO3/AAABAAAAAAAuAO3/AAABAAAAAAAvAO3/AAABAAAAAAA0APP/AAABAAAAAAA1APP/AAABAAAAAAA2APP/AAABAAAAAAAtAPn/AAABAAAAAAAuAPn/AAABAAAAAAAvAPn/AAABAAAAAAAzAP//AAABAAAAAAAzAP7/AAABAAAAAAAzAP3/AAABAAAAAAA0AP3/AAABAAAAAAA1AP3/AAABAAAAAAA1AP7/AAABAAAAAAA0AP7/AAABAAAAAAA0AP//AAABAAAAAAA1AP//AAABAAAAAAA2AP//AAABAAAAAAA2AP7/AAABAAAAAAA2AP3/AAABAAAAAAA3AP3/AAABAAAAAAA3AP7/AAABAAAAAAA3AP//AAABAAAAAAA=")
+tile_set = SubResource("TileSet_bt44k")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2580.0
+offset_top = -1120.0
+offset_right = 3914.0
+offset_bottom = -885.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "Level 6 - aerial combat. Player must keep jumping and killing so they don't run out of time."
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 610.0
+offset_top = -1167.0
+offset_right = 870.0
+offset_bottom = -1027.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "start"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 5072.0
+offset_top = -406.0
+offset_right = 5252.0
+offset_bottom = -266.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "end"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1457.0
+offset_top = -1747.0
+offset_right = 1757.0
+offset_bottom = -1607.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label7" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2036.0
+offset_top = -1958.0
+offset_right = 2336.0
+offset_bottom = -1818.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label8" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2780.0
+offset_top = -1972.0
+offset_right = 3080.0
+offset_bottom = -1832.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label9" type="Label" parent="."]
+texture_filter = 1
+offset_left = 3566.0
+offset_top = -1967.0
+offset_right = 3866.0
+offset_bottom = -1827.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label10" type="Label" parent="."]
+texture_filter = 1
+offset_left = 4324.0
+offset_top = -1972.0
+offset_right = 4624.0
+offset_bottom = -1832.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label11" type="Label" parent="."]
+texture_filter = 1
+offset_left = 4986.0
+offset_top = -1384.0
+offset_right = 5286.0
+offset_bottom = -1244.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label12" type="Label" parent="."]
+texture_filter = 1
+offset_left = 4324.0
+offset_top = -833.0
+offset_right = 4624.0
+offset_bottom = -693.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2011.0
+offset_top = -1407.0
+offset_right = 2311.0
+offset_bottom = -1267.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label6" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1466.0
+offset_top = -1218.0
+offset_right = 1766.0
+offset_bottom = -1078.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label13" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2573.0
+offset_top = -197.0
+offset_right = 3363.0
+offset_bottom = -57.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "Spikes on bottom"
+
+[node name="Player" parent="." instance=ExtResource("3_8tsbn")]
+position = Vector2(713, -951)

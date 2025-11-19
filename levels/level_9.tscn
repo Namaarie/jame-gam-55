@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=4 uid="uid://c88n6oi1aedtq"]
+
+[ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_b5ana"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_8bky6"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="3_igtvg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
+texture = ExtResource("1_b5ana")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bt44k"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jirdo")
+
+[node name="Level_9" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(12, 12)
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_bt44k")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2533.0
+offset_top = -1248.0
+offset_right = 3715.0
+offset_bottom = -679.0
+theme_override_fonts/font = ExtResource("2_8bky6")
+theme_override_font_sizes/font_size = 80
+text = "Level 9 - RIP AND TEAR!!! Fight through walls of enemies. Last level before boss."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 595.0
+offset_top = -303.0
+offset_right = 855.0
+offset_bottom = -163.0
+theme_override_fonts/font = ExtResource("2_8bky6")
+theme_override_font_sizes/font_size = 80
+text = "start"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 5230.0
+offset_top = -286.0
+offset_right = 5410.0
+offset_bottom = -146.0
+theme_override_fonts/font = ExtResource("2_8bky6")
+theme_override_font_sizes/font_size = 80
+text = "end"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1043.0
+offset_top = -488.0
+offset_right = 5099.0
+offset_bottom = -62.0
+theme_override_fonts/font = ExtResource("2_8bky6")
+theme_override_font_sizes/font_size = 80
+text = "enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy enemy "
+autowrap_mode = 3
+
+[node name="Player" parent="." instance=ExtResource("3_igtvg")]
+position = Vector2(713, -87)

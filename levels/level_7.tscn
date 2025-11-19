@@ -1,0 +1,162 @@
+[gd_scene load_steps=6 format=4 uid="uid://nk6oub5yl5os"]
+
+[ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_w8d84"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_e8mof"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="3_jgr6b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
+texture = ExtResource("1_w8d84")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bt44k"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jirdo")
+
+[node name="Level_7" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(12, 12)
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_bt44k")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2059.0
+offset_top = -877.0
+offset_right = 3393.0
+offset_bottom = -451.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "Level 7 - Ground  & pound. Keep spamming down attacks on enemies."
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 595.0
+offset_top = -303.0
+offset_right = 855.0
+offset_bottom = -163.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "start"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 4698.0
+offset_top = -163.0
+offset_right = 4878.0
+offset_bottom = -23.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "end"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1821.0
+offset_top = -135.0
+offset_right = 2121.0
+offset_bottom = 5.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label7" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2203.0
+offset_top = -154.0
+offset_right = 2503.0
+offset_bottom = -14.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label8" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2583.0
+offset_top = -127.0
+offset_right = 2883.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label9" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2949.0
+offset_top = -132.0
+offset_right = 3249.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label10" type="Label" parent="."]
+texture_filter = 1
+offset_left = 4122.0
+offset_top = -142.0
+offset_right = 4422.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label11" type="Label" parent="."]
+texture_filter = 1
+offset_left = 3738.0
+offset_top = -136.0
+offset_right = 4038.0
+offset_bottom = 4.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label12" type="Label" parent="."]
+texture_filter = 1
+offset_left = 3364.0
+offset_top = -141.0
+offset_right = 3664.0
+offset_bottom = -1.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1440.0
+offset_top = -113.0
+offset_right = 1740.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label6" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1041.0
+offset_top = -116.0
+offset_right = 1341.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("2_e8mof")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Player" parent="." instance=ExtResource("3_jgr6b")]
+position = Vector2(713, -87)
