@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_b1vqp"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_eoivg"]
-[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="3_tu44s"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_tu44s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_b1vqp")

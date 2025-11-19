@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmb6saccgil0d"]
+
+[ext_resource type="PackedScene" uid="uid://v4ilu8dteaen" path="res://entities/characters/enemies/enemy.tscn" id="1_274jb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_274jb"]
+size = Vector2(128, 128)
+
+[node name="Enemy" instance=ExtResource("1_274jb")]
+team = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_274jb")
+
+[node name="CharacterSprite" parent="." index="2"]
+self_modulate = Color(1.3099306, 0.8738232, 1.3408749, 1)

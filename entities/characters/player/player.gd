@@ -1,22 +1,24 @@
-extends CharacterBody2D
+extends Character
 signal player_attacked
 signal player_died
 signal player_dashed
 signal player_jumped
 
-@export var coyote_time := 5.1
-@export var speed := 300.0
-@export var ground_friction := 300.0
-@export var air_resistance := 150.0
-@export var jump_velocity := 300.0
-@export var gravity_multiplier := 2.0
-@export var max_variable_jump_frames := 15
-@export var dash_strength := 600.0
-@export var dash_cooldown := 5.0
-@export var wall_climb_strength := 0.5
+@export var coyote_time := 0.1
+@export var speed := 100.0
+@export var ground_friction := 10.0
+@export var air_resistance := 7.0
+@export var jump_velocity := 30.0
+@export var gravity_multiplier := 10.0
+@export var max_variable_jump_frames := 10
+@export var dash_strength := 50.0
+@export var dash_cooldown := 1.0
+@export var wall_climb_strength := 0.75
 @export var has_double_jump := false
 @export var has_dash := false
 @export var input_buffer_frames := 15
+
+var normal_attack_ability: PackedScene = preload("../../abilities/player_default_attack/player_default_attack.tscn")
 
 var input_buffers := {}
 var in_coyote_time := false
@@ -36,6 +38,7 @@ var can_wall_jump := false
 # TODO: action economy (doing things takes 'time')
 
 func _ready() -> void:
+	super._ready()
 	cur_variable_jump_frames = max_variable_jump_frames
 	($CoyoteTimer as Timer).timeout.connect(end_coyote_time)
 	player_jumped.connect(end_coyote_time)
@@ -58,14 +61,23 @@ func handle_dash(delta: float) -> void:
 	if Input.is_action_just_pressed("secondary") and has_dash and ($DashTimer as Timer).is_stopped():
 		# do dash
 		player_dashed.emit()
+
 		($DashTimer as Timer).start(dash_cooldown)
 		var dir := global_position.direction_to(get_global_mouse_position())
 		($DashTrail as GPUParticles2D).emitting = true
 		velocity = dir.normalized() * dash_strength / delta
 
-func handle_attack(delta: float) -> void:
+func handle_attack(_delta: float) -> void:
 	if Input.is_action_just_pressed("primary"):
 		# TODO: attack
+
+		var instance: Node2D = normal_attack_ability.instantiate()
+		get_parent().add_child(instance)
+		instance.global_position = global_position
+
+		if ($CharacterSprite as AnimatedSprite2D).flip_h == false:
+			instance.scale = Vector2(-1, 1)
+
 		player_attacked.emit()
 
 func handle_jump(delta: float) -> void:
@@ -109,6 +121,7 @@ func update_input_buffer() -> void:
 			input_buffers.erase(input)
 
 func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
 	update_input_buffer()
 		
 	if is_on_floor():
@@ -129,6 +142,19 @@ func _physics_process(delta: float) -> void:
 	handle_dash(delta)
 	handle_attack(delta)
 
+
+	# logic applied based on x velocity
+	if velocity.x > 0:
+		# when player moving right
+		($CharacterSprite as AnimatedSprite2D).flip_h = false
+	elif velocity.x < 0:
+		# when player moving left
+		($CharacterSprite as AnimatedSprite2D).flip_h = true
+	else:
+		# when player not moving horizontally
+		pass
+
+	# logic applied based on y velocity
 	if velocity.y > 0:
 		# if falling, start counting down coyote time
 		start_coyote_time()

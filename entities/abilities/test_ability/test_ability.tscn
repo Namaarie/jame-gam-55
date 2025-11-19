@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cagjws0q3gfsn"]
+
+[ext_resource type="PackedScene" uid="uid://lhr2u8583m2s" path="res://entities/abilities/ability.tscn" id="1_6cx37"]
+[ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="2_s2b65"]
+[ext_resource type="Script" uid="uid://ci2nt35y44w17" path="res://gamelogic/ability_stats.gd" id="2_tv12l"]
+
+[sub_resource type="Resource" id="Resource_vgnck"]
+script = ExtResource("2_tv12l")
+metadata/_custom_type_script = "uid://ci2nt35y44w17"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tv12l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s2b65")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv12l"]
+size = Vector2(128, 128)
+
+[node name="TestAbility" instance=ExtResource("1_6cx37")]
+ability_stats = SubResource("Resource_vgnck")
+team = 2
+
+[node name="AbilitySprite" parent="." index="0"]
+self_modulate = Color(1, 0, 0, 1)
+sprite_frames = SubResource("SpriteFrames_tv12l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_tv12l")

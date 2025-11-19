@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://i7nxyvn7em75"]
+
+[ext_resource type="PackedScene" uid="uid://lhr2u8583m2s" path="res://entities/abilities/ability.tscn" id="1_6ldmq"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6ldmq"]
+points = PackedVector2Array(-232, -80, 72, -112, 72, 136, -56, 64)
+
+[node name="PlayerDefaultAttack" instance=ExtResource("1_6ldmq")]
+team = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("ConvexPolygonShape2D_6ldmq")
+
+[node name="DestroyTimer" parent="." index="2"]
+wait_time = 0.1

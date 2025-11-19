@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq5us0y5wfys"
-path="res://.godot/imported/player_die.png-eecad7cf975ed54e142ccacf2e17ae65.ctex"
+uid="uid://bvn03gurpmetn"
+path="res://.godot/imported/player_jump_and_fall.png-ee895ffff565443ee62e9b35c3821155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/spritesheets/player_die.png"
-dest_files=["res://.godot/imported/player_die.png-eecad7cf975ed54e142ccacf2e17ae65.ctex"]
+source_file="res://entities/characters/player/spritesheets/player_jump_and_fall.png"
+dest_files=["res://.godot/imported/player_jump_and_fall.png-ee895ffff565443ee62e9b35c3821155.ctex"]
 
 [params]
 

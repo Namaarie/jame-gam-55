@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://o0p2t50um1mt"]
+
+[ext_resource type="Script" uid="uid://bg1oih1q8uabm" path="res://entities/characters/character.gd" id="1_673gj"]
+[ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="1_qwt66"]
+[ext_resource type="PackedScene" uid="uid://bv3ivxqlcxl6d" path="res://components/hurtbox_component.tscn" id="2_qwt66"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbyx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qwt66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Character" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_673gj")
+
+[node name="WorldCollider" type="CollisionShape2D" parent="."]
+
+[node name="HurtboxComponent" parent="." instance=ExtResource("2_qwt66")]
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lbyx4")

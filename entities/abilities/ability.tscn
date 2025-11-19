@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://lhr2u8583m2s"]
+
+[ext_resource type="Script" uid="uid://4wqsv520tsfw" path="res://entities/abilities/ability.gd" id="1_tf6v8"]
+[ext_resource type="PackedScene" uid="uid://ctdb1aath35a7" path="res://components/hitbox_component.tscn" id="3_jqdkw"]
+
+[node name="Ability" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_tf6v8")
+
+[node name="AbilitySprite" type="AnimatedSprite2D" parent="."]
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_jqdkw")]
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 100.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DestroyTimer" to="." method="queue_free"]

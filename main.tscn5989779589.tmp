@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://drkajeaocatbc"]
+[gd_scene load_steps=4 format=3 uid="uid://drkajeaocatbc"]
 
-[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bfu78a7gvj2nx" path="res://entities/block/block.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cagjws0q3gfsn" path="res://entities/abilities/test_ability/test_ability.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cmb6saccgil0d" path="res://entities/characters/enemies/dummy/dummy.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(184, 312)
 
 [node name="Block" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(272, 472)
@@ -17,10 +19,4 @@ rotation = 1.5707964
 scale = Vector2(50, 1)
 
 [node name="TestAbility" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(612, 335)
-
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(55, 340)
-
-[node name="Enemy" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(-378, 315)
+position = Vector2(608, 193)

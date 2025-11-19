@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4ilu8dteaen"]
+
+[ext_resource type="Script" uid="uid://cud4euqls2tqm" path="res://entities/characters/enemies/enemy.gd" id="1_ksmh7"]
+[ext_resource type="PackedScene" uid="uid://o0p2t50um1mt" path="res://entities/characters/character.tscn" id="1_uuco2"]
+
+[node name="Enemy" instance=ExtResource("1_uuco2")]
+script = ExtResource("1_ksmh7")
