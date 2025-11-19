@@ -6,10 +6,12 @@
 size = Vector2(128, 128)
 
 [node name="Enemy" instance=ExtResource("1_274jb")]
-team = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
 shape = SubResource("RectangleShape2D_274jb")
 
 [node name="CharacterSprite" parent="." index="2"]
 self_modulate = Color(1.3099306, 0.8738232, 1.3408749, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_274jb")

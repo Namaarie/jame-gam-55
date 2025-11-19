@@ -4,7 +4,7 @@ class_name HitboxComponent
 
 var team: Enums.Teams = Enums.Teams.UNSET
 
-var payload: AbilityStats = null
+var payload: AbilityStats = AbilityStats.new()
 
 func _ready() -> void:
 	# enables this hitbox basically

@@ -32,3 +32,6 @@ sprite_frames = SubResource("SpriteFrames_tv12l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("RectangleShape2D_tv12l")
+
+[node name="DestroyTimer" parent="." index="2"]
+wait_time = 10.0

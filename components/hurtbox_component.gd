@@ -16,5 +16,6 @@ func _process(delta: float) -> void:
 
 	# assuming all areas are hitboxes due to physics layers
 	for hitbox: HitboxComponent in hitboxes:
-		if hitbox.team == team: return # don't hit yourself or allies
+		if hitbox.team == team: continue # don't hit yourself or allies
+		# print(hitbox.get_parent().name)
 		hit_by_hitbox.emit(hitbox.payload)
