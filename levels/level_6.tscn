@@ -45,7 +45,7 @@ offset_right = 3914.0
 offset_bottom = -885.0
 theme_override_fonts/font = ExtResource("2_qskt5")
 theme_override_font_sizes/font_size = 80
-text = "Level 6 - aerial combat"
+text = "Level 6 - aerial combat. Player must keep jumping and killing so they don't run out of time."
 autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="."]
@@ -157,6 +157,16 @@ offset_bottom = -1078.0
 theme_override_fonts/font = ExtResource("2_qskt5")
 theme_override_font_sizes/font_size = 80
 text = "enemy"
+
+[node name="Label13" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2573.0
+offset_top = -197.0
+offset_right = 3363.0
+offset_bottom = -57.0
+theme_override_fonts/font = ExtResource("2_qskt5")
+theme_override_font_sizes/font_size = 80
+text = "Spikes on bottom"
 
 [node name="Player" parent="." instance=ExtResource("3_8tsbn")]
 position = Vector2(713, -951)

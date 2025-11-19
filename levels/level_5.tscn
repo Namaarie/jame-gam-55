@@ -80,10 +80,10 @@ text = "enemy"
 
 [node name="Label5" type="Label" parent="."]
 texture_filter = 1
-offset_left = 2930.0
-offset_top = -153.0
-offset_right = 3230.0
-offset_bottom = -13.0
+offset_left = 3247.0
+offset_top = -2399.0
+offset_right = 3547.0
+offset_bottom = -2259.0
 theme_override_fonts/font = ExtResource("2_r02ll")
 theme_override_font_sizes/font_size = 80
 text = "enemy"
@@ -97,6 +97,16 @@ offset_bottom = -26.0
 theme_override_fonts/font = ExtResource("2_r02ll")
 theme_override_font_sizes/font_size = 80
 text = "enemy"
+
+[node name="Label7" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2553.0
+offset_top = -160.0
+offset_right = 2853.0
+offset_bottom = -20.0
+theme_override_fonts/font = ExtResource("2_r02ll")
+theme_override_font_sizes/font_size = 80
+text = "Spikes"
 
 [node name="Player" parent="." instance=ExtResource("3_26h77")]
 position = Vector2(57, -67)

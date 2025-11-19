@@ -1,0 +1,162 @@
+[gd_scene load_steps=6 format=4 uid="uid://cjctxlo2mtx2a"]
+
+[ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_y1kxu"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_rmft0"]
+[ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://player/player.tscn" id="3_4kux0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
+texture = ExtResource("1_y1kxu")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bt44k"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jirdo")
+
+[node name="Level_8" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(12, 12)
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAaAAAAAAABAAAAAAAbAAAAAAABAAAAAAAcAAAAAAABAAAAAAAdAAAAAAABAAAAAAAeAAAAAAABAAAAAAAfAAAAAAABAAAAAAAgAAAAAAABAAAAAAAhAAAAAAABAAAAAAAiAAAAAAABAAAAAAAjAAAAAAABAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAmAAAAAAABAAAAAAAnAAAAAAABAAAAAAAoAAAAAAABAAAAAAApAAAAAAABAAAAAAAqAAAAAAABAAAAAAArAAAAAAABAAAAAAAsAAAAAAABAAAAAAAtAAAAAAABAAAAAAAuAAAAAAABAAAAAAAvAAAAAAABAAAAAAAwAAAAAAABAAAAAAAxAAAAAAABAAAAAAAyAAAAAAABAAAAAAAzAAAAAAABAAAAAAA0AAAAAAABAAAAAAA1AAAAAAABAAAAAAA2AAAAAAABAAAAAAA3AAAAAAABAAAAAAA4AAAAAAABAAAAAAA5AAAAAAABAAAAAAA6AAAAAAABAAAAAAA7AAAAAAABAAAAAAARAP//AAABAAAAAAARAP7/AAABAAAAAAARAPn/AAABAAAAAAARAPj/AAABAAAAAAARAPf/AAABAAAAAAARAPP/AAABAAAAAAARAPL/AAABAAAAAAARAPH/AAABAAAAAAARAO3/AAABAAAAAAARAOz/AAABAAAAAAANAPz/AAABAAAAAAANAPv/AAABAAAAAAANAPb/AAABAAAAAAANAPX/AAABAAAAAAANAPT/AAABAAAAAAANAPD/AAABAAAAAAANAO//AAABAAAAAAANAO7/AAABAAAAAAANAOr/AAABAAAAAAANAOn/AAABAAAAAAANAOj/AAABAAAAAAARAOv/AAABAAAAAAARAOf/AAABAAAAAAARAP3/AAABAAAAAAATAPz/AAABAAAAAAATAPr/AAABAAAAAAATAPv/AAABAAAAAAALAPj/AAABAAAAAAALAPn/AAABAAAAAAALAPr/AAABAAAAAAARAOb/AAABAAAAAAARAOX/AAABAAAAAAANAOT/AAABAAAAAAANAOP/AAABAAAAAAANAOL/AAABAAAAAAANAOH/AAABAAAAAAAOAOH/AAABAAAAAAAPAOH/AAABAAAAAAAQAOH/AAABAAAAAAARAOH/AAABAAAAAAASAOH/AAABAAAAAAATAOH/AAABAAAAAAAUAOH/AAABAAAAAAAVAOH/AAABAAAAAAAWAOH/AAABAAAAAAAXAOH/AAABAAAAAAAYAOH/AAABAAAAAAAZAOH/AAABAAAAAAASAP3/AAABAAAAAAATAP3/AAABAAAAAAAMAPr/AAABAAAAAAANAPr/AAABAAAAAAASAPn/AAABAAAAAAATAPn/AAABAAAAAAAMAPb/AAABAAAAAAALAPb/AAABAAAAAAALAPf/AAABAAAAAAASAPf/AAABAAAAAAATAPf/AAABAAAAAAATAPb/AAABAAAAAAATAPX/AAABAAAAAAATAPT/AAABAAAAAAATAPP/AAABAAAAAAASAPP/AAABAAAAAAAMAPT/AAABAAAAAAALAPT/AAABAAAAAAALAPD/AAABAAAAAAAMAPD/AAABAAAAAAALAPL/AAABAAAAAAALAPH/AAABAAAAAAALAPP/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAATAO3/AAABAAAAAAASAO3/AAABAAAAAAATAPD/AAABAAAAAAATAO//AAABAAAAAAATAO7/AAABAAAAAAAMAO7/AAABAAAAAAALAO7/AAABAAAAAAALAO3/AAABAAAAAAALAOz/AAABAAAAAAALAOv/AAABAAAAAAALAOr/AAABAAAAAAAMAOr/AAABAAAAAAASAOv/AAABAAAAAAATAOv/AAABAAAAAAATAOr/AAABAAAAAAATAOn/AAABAAAAAAATAOj/AAABAAAAAAATAOf/AAABAAAAAAASAOf/AAABAAAAAAAMAOj/AAABAAAAAAALAOj/AAABAAAAAAALAOf/AAABAAAAAAALAOb/AAABAAAAAAALAOX/AAABAAAAAAALAOT/AAABAAAAAAAMAOT/AAABAAAAAAASAOX/AAABAAAAAAATAOX/AAABAAAAAAAUAOX/AAABAAAAAAAVAOX/AAABAAAAAAAWAOX/AAABAAAAAAAXAOX/AAABAAAAAAAYAOX/AAABAAAAAAAZAOX/AAABAAAAAAAaAOX/AAABAAAAAAAbAOX/AAABAAAAAAAcAOX/AAABAAAAAAAaAOH/AAABAAAAAAAbAOH/AAABAAAAAAAcAOH/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_bt44k")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -212.0
+offset_top = -774.0
+offset_right = 1122.0
+offset_bottom = -348.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "Level 8 - Combat climb. Keep climbing and fighting"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 595.0
+offset_top = -303.0
+offset_right = 855.0
+offset_bottom = -163.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "start"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2521.0
+offset_top = -2745.0
+offset_right = 2701.0
+offset_bottom = -2605.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "end"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1642.0
+offset_top = -1054.0
+offset_right = 1942.0
+offset_bottom = -914.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label7" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1077.0
+offset_top = -1335.0
+offset_right = 1377.0
+offset_bottom = -1195.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label8" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1563.0
+offset_top = -1680.0
+offset_right = 1863.0
+offset_bottom = -1540.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label9" type="Label" parent="."]
+texture_filter = 1
+offset_left = 996.0
+offset_top = -1929.0
+offset_right = 1296.0
+offset_bottom = -1789.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label10" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1744.0
+offset_top = -2740.0
+offset_right = 2044.0
+offset_bottom = -2600.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label11" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1128.0
+offset_top = -2502.0
+offset_right = 1428.0
+offset_bottom = -2362.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label12" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1618.0
+offset_top = -2190.0
+offset_right = 1918.0
+offset_bottom = -2050.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1086.0
+offset_top = -743.0
+offset_right = 1386.0
+offset_bottom = -603.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Label6" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1648.0
+offset_top = -451.0
+offset_right = 1948.0
+offset_bottom = -311.0
+theme_override_fonts/font = ExtResource("2_rmft0")
+theme_override_font_sizes/font_size = 80
+text = "enemy"
+
+[node name="Player" parent="." instance=ExtResource("3_4kux0")]
+position = Vector2(713, -87)
