@@ -71,3 +71,7 @@ secondary={
 2d_physics/layer_2="Hurtbox"
 2d_physics/layer_3="Hitbox"
 2d_physics/layer_4="Characters"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
