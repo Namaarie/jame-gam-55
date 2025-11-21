@@ -1,0 +1,150 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgnp5jc3cjeib"]
+
+[ext_resource type="Script" uid="uid://bh4c606eepyyu" path="res://ui/main_menu/main_menu.gd" id="1_3c04x"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="1_i5wg5"]
+[ext_resource type="Texture2D" uid="uid://dfye746s6fn5g" path="res://ui/in_game_ui/stone_button_regular.png" id="2_3c04x"]
+[ext_resource type="Texture2D" uid="uid://dc58pl0otikag" path="res://ui/in_game_ui/stone_button_clicked.png" id="3_joh67"]
+[ext_resource type="Texture2D" uid="uid://bnyvxc3v0msqq" path="res://ui/in_game_ui/stone_button_highlighted.png" id="4_u184e"]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("start_button", "settings_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3c04x")
+start_button = NodePath("VBoxContainer/StartButton")
+settings_button = NodePath("VBoxContainer/SettingsButton")
+quit_button = NodePath("VBoxContainer/QuitButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -30.0
+offset_right = 392.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="DeathText" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_i5wg5")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "GORGESLAYER"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_3c04x")
+texture_pressed = ExtResource("3_joh67")
+texture_hover = ExtResource("4_u184e")
+
+[node name="StartButtonText" type="RichTextLabel" parent="VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -14.0
+offset_right = 38.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_i5wg5")
+bbcode_enabled = true
+text = "Start Game"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_3c04x")
+texture_pressed = ExtResource("3_joh67")
+texture_hover = ExtResource("4_u184e")
+
+[node name="SettingsButtonText" type="RichTextLabel" parent="VBoxContainer/SettingsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -14.0
+offset_right = 38.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_i5wg5")
+bbcode_enabled = true
+text = "Settings"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_3c04x")
+texture_pressed = ExtResource("3_joh67")
+texture_hover = ExtResource("4_u184e")
+
+[node name="QuitButtonText" type="RichTextLabel" parent="VBoxContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -14.0
+offset_right = 38.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_i5wg5")
+bbcode_enabled = true
+text = "Quit Game"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false

@@ -29,6 +29,13 @@ func _physics_process(_delta: float) -> void:
 			is_invulerable = false
 			current_invulerability_frames = invulerability_frames
 
+func character_die():
+	stats.current_health = 0
+	is_alive = false
+	print("%s has died." % name)
+	character_died.emit()
+
+	queue_free()
 
 func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:
 	if is_invulerable: return
@@ -45,7 +52,6 @@ func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:
 	print("%s took %d damage, current health: %d" % [name, payload.damage, stats.current_health])
 
 	if stats.current_health <= 0:
-		stats.current_health = 0
-		is_alive = false
-		print("%s has died." % name)
-		character_died.emit()
+		character_die()
+
+

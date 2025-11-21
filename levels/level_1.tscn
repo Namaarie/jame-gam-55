@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://bynyld0sbntr5"]
+[gd_scene load_steps=7 format=4 uid="uid://bynyld0sbntr5"]
 
+[ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="1_kx6l7"]
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_vn7o3"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_jirdo"]
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_bt44k"]
@@ -30,6 +31,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jirdo")
 
 [node name="Level_1" type="Node2D"]
+
+[node name="NextLevelZone" parent="." instance=ExtResource("1_kx6l7")]
+position = Vector2(2752, -96)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1

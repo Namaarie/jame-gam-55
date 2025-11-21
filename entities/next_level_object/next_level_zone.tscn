@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdp1al3xtnut"]
+
+[ext_resource type="Script" uid="uid://cijg81hdjlc0k" path="res://entities/next_level_object/next_level_zone.gd" id="1_45opi"]
+[ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="1_qheup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45opi"]
+size = Vector2(128, 128)
+
+[node name="NextLevelZone" type="Area2D"]
+collision_mask = 15
+script = ExtResource("1_45opi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_45opi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.84613574, 0, 1)
+texture = ExtResource("1_qheup")

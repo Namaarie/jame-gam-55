@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfpuc4i0wxu4g"]
+
+[ext_resource type="Texture2D" uid="uid://bpfa5tdnevkjk" path="res://ui/splashscreen/mira.png" id="1_c24qb"]
+[ext_resource type="Texture2D" uid="uid://fr1an6q0gteb" path="res://ui/splashscreen/godot_logo.png" id="1_he1fd"]
+[ext_resource type="Script" uid="uid://c4ld3o8g8h35s" path="res://ui/splashscreen/splash_screen.gd" id="1_u0r4w"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0r4w")
+splash_screen_duration = null
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24526232, 0.025840001, 0.23209421, 0.569)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -196.0
+offset_right = 130.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+texture = ExtResource("1_he1fd")
+expand_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_c24qb")
+expand_mode = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer/ReferenceRect"]
+layout_mode = 0
+offset_left = 132.0
+offset_right = 132.0
+offset_bottom = 794.0

@@ -1,6 +1,6 @@
 extends Character
+class_name Player
 signal player_attacked
-signal player_died
 signal player_dashed
 signal player_jumped
 
@@ -18,6 +18,8 @@ signal player_jumped
 @export var has_dash := false
 @export var input_buffer_frames := 15
 
+@export var lifeforce_seconds: float = 20.0
+
 var normal_attack_ability: PackedScene = preload("../../abilities/player_default_attack/player_default_attack.tscn")
 
 var input_buffers := {}
@@ -26,6 +28,8 @@ var coyote_time_reset := true
 var cur_variable_jump_frames := -1
 var can_double_jump := false
 var can_wall_jump := false
+
+var lifeforce_remaining: float = 0.0
 
 # TODO: Variable jump height (done)
 # TODO: double jump (done)
@@ -42,6 +46,10 @@ func _ready() -> void:
 	cur_variable_jump_frames = max_variable_jump_frames
 	($CoyoteTimer as Timer).timeout.connect(end_coyote_time)
 	player_jumped.connect(end_coyote_time)
+
+	lifeforce_remaining = lifeforce_seconds
+
+	# hook into lifetimer
 
 func start_coyote_time() -> void:
 	if coyote_time_reset:
@@ -120,8 +128,20 @@ func update_input_buffer() -> void:
 		if input_buffers[input] < 0:
 			input_buffers.erase(input)
 
+func update_lifeforce(delta: float) -> void:
+	if lifeforce_remaining <= 0.0: return
+	lifeforce_remaining -= delta
+	SignalBus.lifeforce_remaining_updated.emit(lifeforce_remaining)
+	if lifeforce_remaining <= 0.0:
+		lifeforce_remaining = 0.0
+		# ran out of lifeforce, die
+		player_die()
+
 func _physics_process(delta: float) -> void:
+	if not is_alive: return
 	super._physics_process(delta)
+
+	update_lifeforce(delta)
 	update_input_buffer()
 		
 	if is_on_floor():
@@ -177,3 +197,7 @@ func _physics_process(delta: float) -> void:
 		pass
 
 	move_and_slide()
+
+func player_die() -> void:
+	is_alive = false
+	SignalBus.player_died.emit()

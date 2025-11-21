@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Enums="*res://entities/globals/global_enums.gd"
+SignalBus="*res://entities/globals/signal_bus.gd"
+SceneManager="*res://ui/scene_manager.tscn"
 
 [debug]
 

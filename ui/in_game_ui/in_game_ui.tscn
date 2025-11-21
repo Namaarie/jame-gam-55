@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://xwq6e8wjfs7n"]
+
+[ext_resource type="Script" uid="uid://crc28vf2o0l21" path="res://ui/in_game_ui/in_game_ui.gd" id="1_4v2ll"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="1_vqyv7"]
+[ext_resource type="Texture2D" uid="uid://dfye746s6fn5g" path="res://ui/in_game_ui/stone_button_regular.png" id="3_mp7fp"]
+[ext_resource type="Texture2D" uid="uid://bnyvxc3v0msqq" path="res://ui/in_game_ui/stone_button_highlighted.png" id="4_iakjd"]
+[ext_resource type="Texture2D" uid="uid://dc58pl0otikag" path="res://ui/in_game_ui/stone_button_clicked.png" id="4_lu04y"]
+
+[node name="InGameUI" type="Control" node_paths=PackedStringArray("life_timer_label", "death_screen", "restart_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4v2ll")
+life_timer_label = NodePath("LifeforceDisplay")
+death_screen = NodePath("DeathScreen")
+restart_button = NodePath("DeathScreen/VBoxContainer/RestartButton")
+quit_button = NodePath("DeathScreen/VBoxContainer/QuitButton")
+
+[node name="LifeforceDisplay" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_vqyv7")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "TEST"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="DeathScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.1428257, 0.1428257, 0.1428257, 0.469)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -30.0
+offset_right = 392.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="DeathText" type="RichTextLabel" parent="DeathScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_vqyv7")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "YOU HAVE RAN OUT OF LIFEFORCE AND DIED"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="RestartButton" type="TextureButton" parent="DeathScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_mp7fp")
+texture_pressed = ExtResource("4_lu04y")
+texture_hover = ExtResource("4_iakjd")
+
+[node name="RestartButtonText" type="RichTextLabel" parent="DeathScreen/VBoxContainer/RestartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -14.0
+offset_right = 38.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_vqyv7")
+bbcode_enabled = true
+text = "Restart"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="QuitButton" type="TextureButton" parent="DeathScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_mp7fp")
+texture_pressed = ExtResource("4_lu04y")
+texture_hover = ExtResource("4_iakjd")
+
+[node name="QuitButtonText" type="RichTextLabel" parent="DeathScreen/VBoxContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -14.0
+offset_right = 38.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_vqyv7")
+bbcode_enabled = true
+text = "Give up"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
