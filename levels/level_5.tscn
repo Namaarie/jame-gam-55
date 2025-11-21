@@ -6,8 +6,8 @@
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_r02ll"]
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_26h77"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_v5ho1"]
-[ext_resource type="PackedScene" uid="uid://cw71vrddl2hgd" path="res://entities/bonfire/bonfire.tscn" id="4_g5mgy"]
 [ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_v5ho1"]
+[ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="9_ldpug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_dhnqt")
@@ -68,10 +68,6 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="parallax_background/Parallax2D3"]
 scale = Vector2(12, 12)
 texture = ExtResource("3_v5ho1")
-
-[node name="bonfire" parent="." instance=ExtResource("4_g5mgy")]
-position = Vector2(5599, -85)
-scale = Vector2(12, 12)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -157,3 +153,6 @@ position = Vector2(57, -67)
 stream = ExtResource("8_v5ho1")
 autoplay = true
 parameters/looping = true
+
+[node name="NextLevelZone" parent="." instance=ExtResource("9_ldpug")]
+position = Vector2(5605, -63)

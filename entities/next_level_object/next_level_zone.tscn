@@ -1,10 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmdp1al3xtnut"]
+[gd_scene load_steps=7 format=3 uid="uid://cmdp1al3xtnut"]
 
 [ext_resource type="Script" uid="uid://cijg81hdjlc0k" path="res://entities/next_level_object/next_level_zone.gd" id="1_45opi"]
-[ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="1_qheup"]
+[ext_resource type="Texture2D" uid="uid://kim57g1cfrol" path="res://entities/bonfire/bonfire_spritesheet.png" id="2_45opi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45opi"]
 size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o36a8"]
+atlas = ExtResource("2_45opi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrvqc"]
+atlas = ExtResource("2_45opi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sow3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o36a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrvqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="NextLevelZone" type="Area2D"]
 collision_mask = 15
@@ -13,6 +35,10 @@ script = ExtResource("1_45opi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_45opi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0.84613574, 0, 1)
-texture = ExtResource("1_qheup")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -19)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_sow3h")
+autoplay = "default"
+frame = 1
+frame_progress = 0.34321418
