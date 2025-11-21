@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw71vrddl2hgd"]
+
+[ext_resource type="Texture2D" uid="uid://kim57g1cfrol" path="res://entities/bonfire/bonfire_spritesheet.png" id="1_h40tt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs5f7"]
+atlas = ExtResource("1_h40tt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqwgx"]
+atlas = ExtResource("1_h40tt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ek2e1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs5f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqwgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bonfire" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ek2e1")
+autoplay = "default"
+frame_progress = 0.20125625
