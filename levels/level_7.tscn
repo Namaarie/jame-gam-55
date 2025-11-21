@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://nk6oub5yl5os"]
+[gd_scene load_steps=11 format=4 uid="uid://nk6oub5yl5os"]
 
+[ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_vendn"]
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_w8d84"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_e8mof"]
+[ext_resource type="Texture2D" uid="uid://dmq8jv2o5q63s" path="res://levels/backgrounds/new_background/new_background_2.png" id="2_urq6f"]
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_jgr6b"]
+[ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_nyknj"]
+[ext_resource type="PackedScene" uid="uid://cw71vrddl2hgd" path="res://entities/bonfire/bonfire.tscn" id="4_urq6f"]
+[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_nyknj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_w8d84")
@@ -30,6 +35,43 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jirdo")
 
 [node name="Level_7" type="Node2D"]
+
+[node name="parallax_background" type="Node2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Parallax2D" type="Parallax2D" parent="parallax_background"]
+texture_filter = 1
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax_background/Parallax2D"]
+scale = Vector2(12, 12)
+texture = ExtResource("1_vendn")
+
+[node name="Parallax2D2" type="Parallax2D" parent="parallax_background"]
+texture_filter = 1
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax_background/Parallax2D2"]
+scale = Vector2(12, 12)
+texture = ExtResource("2_urq6f")
+
+[node name="Parallax2D3" type="Parallax2D" parent="parallax_background"]
+texture_filter = 1
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax_background/Parallax2D3"]
+scale = Vector2(12, 12)
+texture = ExtResource("3_nyknj")
+
+[node name="bonfire" parent="." instance=ExtResource("4_urq6f")]
+position = Vector2(4804, -85)
+scale = Vector2(12, 12)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -160,3 +202,8 @@ text = "enemy"
 
 [node name="Player" parent="." instance=ExtResource("3_jgr6b")]
 position = Vector2(713, -87)
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nyknj")
+autoplay = true
+parameters/looping = true
