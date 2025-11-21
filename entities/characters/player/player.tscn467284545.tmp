@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://clx0dwqll3bx5" path="res://entities/characters/player/spritesheets/player_normal_attack.png" id="8_wodsf"]
 [ext_resource type="Texture2D" uid="uid://bd31g8vkerdgt" path="res://entities/characters/player/spritesheets/player_run.png" id="9_32hag"]
 [ext_resource type="Texture2D" uid="uid://gj13iu7tvq84" path="res://entities/characters/player/spritesheets/player_up_attack.png" id="10_tqiix"]
-[ext_resource type="PackedScene" uid="uid://xwq6e8wjfs7n" path="res://ui/in_game_ui/in_game_ui.tscn" id="13_2jd2e"]
+[ext_resource type="Script" uid="uid://bobwt7laitol8" path="res://entities/characters/player/life_timer.gd" id="13_2jd2e"]
 
 [sub_resource type="Resource" id="Resource_2jd2e"]
 script = ExtResource("3_0s3gd")
@@ -343,7 +343,6 @@ wall_climb_strength = 0.75
 has_double_jump = true
 has_dash = true
 input_buffer_frames = 15
-lifeforce_seconds = 20.0
 stats = SubResource("Resource_2jd2e")
 team = 1
 
@@ -384,6 +383,6 @@ one_shot = true
 [node name="DashTimer" type="Timer" parent="." index="6"]
 one_shot = true
 
-[node name="PlayerUI" type="CanvasLayer" parent="." index="7"]
-
-[node name="InGameUI" parent="PlayerUI" index="0" instance=ExtResource("13_2jd2e")]
+[node name="LifeTimer" type="Timer" parent="." index="7"]
+script = ExtResource("13_2jd2e")
+life_time_seconds = null

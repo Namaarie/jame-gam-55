@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://bynyld0sbntr5"]
 
+[ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="1_kx6l7"]
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_btoec"]
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_vn7o3"]
 [ext_resource type="Texture2D" uid="uid://dmq8jv2o5q63s" path="res://levels/backgrounds/new_background/new_background_2.png" id="2_gwceb"]
@@ -40,6 +41,8 @@ size = Vector2(87, 1754)
 
 [node name="Level_1" type="Node2D"]
 
+[node name="NextLevelZone" parent="." instance=ExtResource("1_kx6l7")]
+position = Vector2(2752, -96)
 [node name="parallax_background" type="Node2D" parent="."]
 position = Vector2(576, 324)
 

@@ -9,8 +9,4 @@ script = ExtResource("1_ksmh7")
 contact_damage = 10.0
 team = 2
 
-[node name="HurtboxComponent" parent="." index="1"]
-team = 2
-
 [node name="HitboxComponent" parent="." index="3" instance=ExtResource("3_k6q6l")]
-team = 2
