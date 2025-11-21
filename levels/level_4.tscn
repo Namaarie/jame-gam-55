@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://np008m7evwjh"]
+[gd_scene load_steps=11 format=4 uid="uid://np008m7evwjh"]
 
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_b15rf"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_s4mq8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="4_hokjj"]
 [ext_resource type="Texture2D" uid="uid://dmq8jv2o5q63s" path="res://levels/backgrounds/new_background/new_background_2.png" id="5_0fd8o"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="6_dmnu2"]
+[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_dmnu2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_b15rf")
@@ -141,3 +142,8 @@ text = "enemy"
 
 [node name="Player" parent="." instance=ExtResource("3_s4mq8")]
 position = Vector2(57, -67)
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dmnu2")
+autoplay = true
+parameters/looping = true

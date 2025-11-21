@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cpmxahgv1agul"]
+[gd_scene load_steps=11 format=4 uid="uid://cpmxahgv1agul"]
 
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_pltw0"]
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_rqsg2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_8tsbn"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_xn6mk"]
 [ext_resource type="PackedScene" uid="uid://cw71vrddl2hgd" path="res://entities/bonfire/bonfire.tscn" id="4_fpvgn"]
+[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_xn6mk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_pltw0")
@@ -211,3 +212,8 @@ text = "Spikes on bottom"
 
 [node name="Player" parent="." instance=ExtResource("3_8tsbn")]
 position = Vector2(713, -951)
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xn6mk")
+autoplay = true
+parameters/looping = true

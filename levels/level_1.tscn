@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bynyld0sbntr5"]
+[gd_scene load_steps=12 format=4 uid="uid://bynyld0sbntr5"]
 
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_btoec"]
 [ext_resource type="Texture2D" uid="uid://bgeavg2ank46w" path="res://levels/tilesets/tileset.png" id="1_vn7o3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_bt44k"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_l53as"]
 [ext_resource type="PackedScene" uid="uid://cw71vrddl2hgd" path="res://entities/bonfire/bonfire.tscn" id="4_gwceb"]
+[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_l53as"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_vn7o3")
@@ -128,3 +129,8 @@ shape = SubResource("RectangleShape2D_l53as")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/right_boundary"]
 position = Vector2(3104, -299)
 shape = SubResource("RectangleShape2D_l53as")
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_l53as")
+autoplay = true
+parameters/looping = true
