@@ -328,6 +328,7 @@ wall_climb_strength = 0.75
 has_double_jump = true
 has_dash = true
 input_buffer_frames = 15
+lifeforce_regen = 3.0
 lifeforce_seconds = 20.0
 stats = SubResource("Resource_2jd2e")
 team = 1

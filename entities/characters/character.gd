@@ -34,7 +34,7 @@ func character_die():
 	is_alive = false
 	print("%s has died." % name)
 	character_died.emit()
-
+	SignalBus.enemy_killed.emit()
 	queue_free()
 
 func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:

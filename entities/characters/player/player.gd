@@ -19,6 +19,7 @@ signal player_jumped
 @export var has_dash := false
 @export var input_buffer_frames := 15
 
+@export var lifeforce_regen: float = 3.0
 @export var lifeforce_seconds: float = 20.0
 
 enum {DASHING, ATTACKING, MOVING, IDLE, JUMPING, FALLING, WALL_CLIMBING, DEAD}
@@ -53,11 +54,15 @@ func _ready() -> void:
 	cur_variable_jump_frames = max_variable_jump_frames
 	($CoyoteTimer as Timer).timeout.connect(end_coyote_time)
 	player_jumped.connect(end_coyote_time)
-
+	SignalBus.enemy_killed.connect(on_enemy_killed)
 	lifeforce_remaining = lifeforce_seconds
 
 	# hook into lifetimer
 	enter_idle_state()
+
+func on_enemy_killed():
+	lifeforce_remaining += lifeforce_regen
+	SignalBus.lifeforce_remaining_updated.emit(lifeforce_remaining)
 
 func enter_attack_state() -> void:
 	if cur_state == ATTACKING: return
