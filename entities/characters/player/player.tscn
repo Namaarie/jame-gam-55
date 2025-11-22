@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://07qm4w0xtu5s"]
+[gd_scene load_steps=53 format=3 uid="uid://07qm4w0xtu5s"]
 
 [ext_resource type="Script" uid="uid://culmapmwppxfn" path="res://entities/characters/player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://o0p2t50um1mt" path="res://entities/characters/character.tscn" id="1_sybl7"]
@@ -89,18 +89,6 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd2rm"]
 atlas = ExtResource("7_kb6p2")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q28gw"]
-atlas = ExtResource("7_kb6p2")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ge24q"]
-atlas = ExtResource("7_kb6p2")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnw6m"]
-atlas = ExtResource("7_kb6p2")
-region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1so5t"]
 atlas = ExtResource("6_yllr7")
@@ -231,15 +219,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jd2rm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q28gw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ge24q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pnw6m")
 }],
 "loop": true,
 "name": &"hurt",
@@ -366,7 +345,7 @@ texture_filter = 1
 position = Vector2(13, 37)
 scale = Vector2(12, 12)
 sprite_frames = SubResource("SpriteFrames_n0b8q")
-animation = &"run"
+animation = &"hurt"
 autoplay = "run"
 
 [node name="DashTrail" type="GPUParticles2D" parent="." index="3"]
