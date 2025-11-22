@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://tdkvqyd2pkbi"]
+
+[ext_resource type="Script" uid="uid://nrwmq4q3icpl" path="res://levels/end_screen.gd" id="1_kvqw7"]
+[ext_resource type="Texture2D" uid="uid://lhd8mqp2xjx4" path="res://ui/main_menu/title_no_text.png" id="2_a7ruh"]
+[ext_resource type="Texture2D" uid="uid://dfye746s6fn5g" path="res://ui/in_game_ui/stone_button_regular.png" id="2_rp27l"]
+[ext_resource type="Texture2D" uid="uid://dc58pl0otikag" path="res://ui/in_game_ui/stone_button_clicked.png" id="3_j745c"]
+[ext_resource type="Texture2D" uid="uid://bnyvxc3v0msqq" path="res://ui/in_game_ui/stone_button_highlighted.png" id="4_a7ruh"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="7_lc84k"]
+[ext_resource type="AudioStream" uid="uid://c4jschjrmfjwh" path="res://sound/background_music/ending_bgm.mp3" id="7_lnjaj"]
+
+[node name="end_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kvqw7")
+
+[node name="TitleNoText" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_a7ruh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4745098)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -191.0
+offset_right = 507.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_lc84k")
+theme_override_font_sizes/font_size = 25
+text = "With a swift strike, the warrior cleaved the golem's heart.
+
+Instantly, the golem crumbled to dust. The land was now safe.
+
+Triumphant, the warrior returned home: their journey forever recounted as the tale of the GORGESLAYER."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="restart_button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -176.0
+offset_right = 1.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_rp27l")
+texture_pressed = ExtResource("3_j745c")
+texture_hover = ExtResource("4_a7ruh")
+
+[node name="RestartButtonText" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = 152.0
+offset_right = -3.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("7_lc84k")
+bbcode_enabled = true
+text = "Restart"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="ending_bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_lnjaj")
+autoplay = true

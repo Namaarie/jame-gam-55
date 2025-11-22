@@ -24,6 +24,8 @@ signal player_jumped
 
 enum {DASHING, ATTACKING, MOVING, IDLE, JUMPING, FALLING, WALL_CLIMBING, DEAD}
 @onready var sprite: AnimatedSprite2D = $CharacterSprite
+@onready var enemy_die = $sfx/enemy_die
+@onready var hurt_sfx = $sfx/hurt_sfx
 
 var normal_attack_ability: PackedScene = preload("../../abilities/player_default_attack/player_default_attack.tscn")
 
@@ -63,6 +65,7 @@ func _ready() -> void:
 func on_enemy_killed():
 	lifeforce_remaining += lifeforce_regen
 	SignalBus.lifeforce_remaining_updated.emit(lifeforce_remaining)
+	enemy_die.play()
 
 func enter_attack_state() -> void:
 	if cur_state == ATTACKING: return
@@ -316,6 +319,7 @@ func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:
 
 	# dealing damage
 	lifeforce_remaining -= payload.damage
+	hurt_sfx.play()
 
 	if lifeforce_remaining <= 0.0:
 		lifeforce_remaining = 0.0

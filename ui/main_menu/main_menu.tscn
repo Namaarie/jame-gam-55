@@ -91,6 +91,7 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 
 [node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("2_3c04x")

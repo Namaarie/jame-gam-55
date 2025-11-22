@@ -34,6 +34,10 @@ gdscript/warnings/unsafe_call_argument=1
 
 enabled=PackedStringArray()
 
+[global_group]
+
+player=""
+
 [input]
 
 left={
