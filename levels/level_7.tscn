@@ -1,16 +1,17 @@
 [gd_scene load_steps=10 format=4 uid="uid://nk6oub5yl5os"]
 
+[ext_resource type="Script" uid="uid://btd6jo21kxuri" path="res://levels/level_7.gd" id="1_cicrg"]
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_vendn"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_e8mof"]
 [ext_resource type="Texture2D" uid="uid://dmq8jv2o5q63s" path="res://levels/backgrounds/new_background/new_background_2.png" id="2_urq6f"]
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_jgr6b"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_nyknj"]
 [ext_resource type="TileSet" uid="uid://ct1am8ekw8vik" path="res://levels/tilesets/tileset_settings.tres" id="4_nyknj"]
-[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_nyknj"]
 [ext_resource type="PackedScene" uid="uid://cmb6saccgil0d" path="res://entities/characters/enemies/dummy/dummy.tscn" id="9_cicrg"]
 [ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="9_q3845"]
 
 [node name="Level_7" type="Node2D"]
+script = ExtResource("1_cicrg")
 
 [node name="parallax_background" type="Node2D" parent="."]
 position = Vector2(576, 324)
@@ -53,11 +54,6 @@ tile_set = ExtResource("4_nyknj")
 
 [node name="Player" parent="." instance=ExtResource("3_jgr6b")]
 position = Vector2(713, -87)
-
-[node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_nyknj")
-autoplay = true
-parameters/looping = true
 
 [node name="NextLevelZone" parent="." instance=ExtResource("9_q3845")]
 position = Vector2(4794, -65)

@@ -1,16 +1,17 @@
 [gd_scene load_steps=10 format=4 uid="uid://np008m7evwjh"]
 
+[ext_resource type="Script" uid="uid://bv3x0b0jxgwbp" path="res://levels/level_4.gd" id="1_ng40l"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_s4mq8"]
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_s4mq8"]
 [ext_resource type="TileSet" uid="uid://ct1am8ekw8vik" path="res://levels/tilesets/tileset_settings.tres" id="4_dmnu2"]
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="4_hokjj"]
 [ext_resource type="Texture2D" uid="uid://dmq8jv2o5q63s" path="res://levels/backgrounds/new_background/new_background_2.png" id="5_0fd8o"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="6_dmnu2"]
-[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_dmnu2"]
 [ext_resource type="PackedScene" uid="uid://cmb6saccgil0d" path="res://entities/characters/enemies/dummy/dummy.tscn" id="9_ng40l"]
 [ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="9_sc6c1"]
 
 [node name="Level_4" type="Node2D"]
+script = ExtResource("1_ng40l")
 
 [node name="parallax_background" type="Node2D" parent="."]
 position = Vector2(576, 324)
@@ -54,11 +55,6 @@ tile_set = ExtResource("4_dmnu2")
 [node name="Player" parent="." instance=ExtResource("3_s4mq8")]
 position = Vector2(57, -67)
 
-[node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_dmnu2")
-autoplay = true
-parameters/looping = true
-
 [node name="NextLevelZone" parent="." instance=ExtResource("9_sc6c1")]
 position = Vector2(5606, -65)
 
@@ -89,6 +85,21 @@ theme_override_font_sizes/bold_italics_font_size = 37
 theme_override_font_sizes/italics_font_size = 37
 bbcode_enabled = true
 text = "[i](Attack enemies with left click or by dashing into them. Killing them adds time to the clock!)[/i]"
+horizontal_alignment = 1
+
+[node name="Label9" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 1630.0
+offset_top = -228.0
+offset_right = 2725.0
+offset_bottom = -106.0
+theme_override_colors/default_color = Color(0.585062, 0.585062, 0.5850621, 1)
+theme_override_fonts/normal_font = ExtResource("2_s4mq8")
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_italics_font_size = 37
+theme_override_font_sizes/italics_font_size = 37
+bbcode_enabled = true
+text = "[i](If an enemy touches you, you lose time!)[/i]"
 horizontal_alignment = 1
 
 [node name="Enemy" parent="." instance=ExtResource("9_ng40l")]
