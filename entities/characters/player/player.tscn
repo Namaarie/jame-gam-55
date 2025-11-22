@@ -342,7 +342,7 @@ air_resistance = 7.0
 jump_velocity = 30.0
 gravity_multiplier = 10.0
 max_variable_jump_frames = 10
-dash_strength = 50.0
+dash_strength = 35.0
 dash_cooldown = 1.0
 dash_duration_frames = 10
 wall_climb_strength = 0.75
@@ -366,7 +366,7 @@ texture_filter = 1
 position = Vector2(13, 37)
 scale = Vector2(12, 12)
 sprite_frames = SubResource("SpriteFrames_n0b8q")
-animation = &"normal_attack"
+animation = &"run"
 autoplay = "run"
 
 [node name="DashTrail" type="GPUParticles2D" parent="." index="3"]

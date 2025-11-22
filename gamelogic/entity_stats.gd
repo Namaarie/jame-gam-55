@@ -2,5 +2,5 @@
 extends Resource
 class_name EntityStats
 
-@export var max_health: float = 100.0
-@export var current_health: float = 100.0
+@export var max_health: float = 10.0
+@export var current_health: float = 10.0

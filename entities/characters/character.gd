@@ -53,5 +53,3 @@ func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:
 
 	if stats.current_health <= 0:
 		character_die()
-
-

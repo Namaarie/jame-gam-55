@@ -108,6 +108,12 @@ func update_state_text() -> void:
 	match cur_state:
 		DASHING:
 			$Label.text = "State DASHING"
+			var instance: Node2D = normal_attack_ability.instantiate()
+			get_parent().add_child(instance)
+			instance.global_position = global_position
+
+			if sprite.flip_h == false:
+				instance.scale = Vector2(-1, 1)
 		ATTACKING:
 			$Label.text = "State ATTACKING"
 		MOVING:
