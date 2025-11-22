@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://07qm4w0xtu5s"]
+[gd_scene load_steps=56 format=3 uid="uid://07qm4w0xtu5s"]
 
 [ext_resource type="Script" uid="uid://culmapmwppxfn" path="res://entities/characters/player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://o0p2t50um1mt" path="res://entities/characters/character.tscn" id="1_sybl7"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bd31g8vkerdgt" path="res://entities/characters/player/spritesheets/player_run.png" id="9_32hag"]
 [ext_resource type="Texture2D" uid="uid://gj13iu7tvq84" path="res://entities/characters/player/spritesheets/player_up_attack.png" id="10_tqiix"]
 [ext_resource type="PackedScene" uid="uid://xwq6e8wjfs7n" path="res://ui/in_game_ui/in_game_ui.tscn" id="13_2jd2e"]
+[ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="18_ou7en"]
 
 [sub_resource type="Resource" id="Resource_2jd2e"]
 script = ExtResource("3_0s3gd")
@@ -175,7 +176,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjvpn")
 }],
-"loop": true,
+"loop": false,
 "name": &"dash",
 "speed": 10.0
 }, {
@@ -328,6 +329,10 @@ scale_min = 0.0
 scale_max = 0.39999998
 alpha_curve = SubResource("CurveTexture_g1dw6")
 
+[sub_resource type="LabelSettings" id="LabelSettings_np65q"]
+font = ExtResource("18_ou7en")
+font_size = 32
+
 [node name="Player" instance=ExtResource("1_sybl7")]
 script = ExtResource("1_oul6g")
 coyote_time = 0.1
@@ -360,15 +365,15 @@ texture_filter = 1
 position = Vector2(13, 37)
 scale = Vector2(12, 12)
 sprite_frames = SubResource("SpriteFrames_n0b8q")
-animation = &"run"
+animation = &"jump"
 autoplay = "run"
+frame_progress = 0.16122591
 
 [node name="DashTrail" type="GPUParticles2D" parent="." index="3"]
 emitting = false
-amount = 500
+amount = 100
 texture = ExtResource("2_rkbax")
 lifetime = 0.5
-one_shot = true
 explosiveness = 0.15
 process_material = SubResource("ParticleProcessMaterial_2jd2e")
 
@@ -387,3 +392,13 @@ one_shot = true
 [node name="PlayerUI" type="CanvasLayer" parent="." index="7"]
 
 [node name="InGameUI" parent="PlayerUI" index="0" instance=ExtResource("13_2jd2e")]
+
+[node name="Label" type="Label" parent="." index="8"]
+offset_left = -40.0
+offset_top = -144.0
+offset_right = 40.0
+offset_bottom = -88.0
+text = "test"
+label_settings = SubResource("LabelSettings_np65q")
+
+[connection signal="animation_finished" from="CharacterSprite" to="." method="_on_character_sprite_animation_finished"]

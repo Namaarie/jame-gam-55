@@ -6,6 +6,6 @@ func _ready() -> void:
 
 func on_body_entered(body: Node2D) -> void:
 	print(body)
-	if body is not Player: return
+	if body != Player: return
 
 	SignalBus.advance_level.emit()

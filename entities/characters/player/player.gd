@@ -49,8 +49,6 @@ func _ready() -> void:
 
 	lifeforce_remaining = lifeforce_seconds
 
-	# hook into lifetimer
-
 func start_coyote_time() -> void:
 	if coyote_time_reset:
 		in_coyote_time = true
