@@ -140,4 +140,5 @@ autoplay = true
 parameters/looping = true
 
 [node name="Enemy" parent="." instance=ExtResource("9_3sk1a")]
-position = Vector2(445, -89)
+position = Vector2(685, -440)
+contact_damage = 3.0
