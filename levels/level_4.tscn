@@ -107,15 +107,15 @@ horizontal_alignment = 1
 
 [node name="Label8" type="RichTextLabel" parent="."]
 texture_filter = 1
-offset_left = 286.0
-offset_top = -283.0
-offset_right = 1242.0
-offset_bottom = -201.0
+offset_left = 258.0
+offset_top = -266.0
+offset_right = 1353.0
+offset_bottom = -184.0
 theme_override_colors/default_color = Color(0.585062, 0.585062, 0.5850621, 1)
 theme_override_fonts/normal_font = ExtResource("2_s4mq8")
 theme_override_font_sizes/normal_font_size = 45
 theme_override_font_sizes/bold_italics_font_size = 37
 theme_override_font_sizes/italics_font_size = 37
 bbcode_enabled = true
-text = "[i](Kill enemies to add time to the clock!)[/i]"
+text = "[i](Dash into enemies to kill them and add time to the clock!)[/i]"
 horizontal_alignment = 1

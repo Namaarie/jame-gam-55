@@ -87,5 +87,20 @@ theme_override_font_sizes/normal_font_size = 45
 theme_override_font_sizes/bold_italics_font_size = 37
 theme_override_font_sizes/italics_font_size = 37
 bbcode_enabled = true
-text = "[i](Walk to a wall and rapidly press jump to climb!)[/i]"
+text = "[i](Run against a wall and rapidly press space to climb!)[/i]"
+horizontal_alignment = 1
+
+[node name="Label4" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 1071.0
+offset_top = -1161.0
+offset_right = 1365.0
+offset_bottom = -915.0
+theme_override_colors/default_color = Color(0.585062, 0.585062, 0.5850621, 1)
+theme_override_fonts/normal_font = ExtResource("2_0srwa")
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_italics_font_size = 37
+theme_override_font_sizes/italics_font_size = 37
+bbcode_enabled = true
+text = "[i](Jump into walls and keep pressing space to climb!)[/i]"
 horizontal_alignment = 1
