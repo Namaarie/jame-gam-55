@@ -5,7 +5,8 @@ func _ready() -> void:
 	body_entered.connect(on_body_entered)
 
 func on_body_entered(body: Node2D) -> void:
-	print(body)
-	if body is not Player: return
-
+	
+	var player = body as Player
+	if player == null: return
+	print(player)
 	SignalBus.advance_level.emit()
