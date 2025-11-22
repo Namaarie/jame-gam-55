@@ -14,6 +14,10 @@ func play_boss_music():
 	level_bgm.stop()
 	boss_bgm.play()
 
+func stop_music():
+	level_bgm.stop()
+	boss_bgm.stop()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
