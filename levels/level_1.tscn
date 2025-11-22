@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bynyld0sbntr5"]
+[gd_scene load_steps=11 format=4 uid="uid://bynyld0sbntr5"]
 
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_btoec"]
 [ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="1_kx6l7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_l53as"]
 [ext_resource type="TileSet" uid="uid://ct1am8ekw8vik" path="res://levels/tilesets/tileset_settings.tres" id="4_l53as"]
 [ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_l53as"]
+[ext_resource type="PackedScene" uid="uid://cmb6saccgil0d" path="res://entities/characters/enemies/dummy/dummy.tscn" id="9_3sk1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l53as"]
 size = Vector2(87, 1754)
@@ -108,3 +109,6 @@ shape = SubResource("RectangleShape2D_l53as")
 stream = ExtResource("8_l53as")
 autoplay = true
 parameters/looping = true
+
+[node name="Enemy" parent="." instance=ExtResource("9_3sk1a")]
+position = Vector2(445, -89)

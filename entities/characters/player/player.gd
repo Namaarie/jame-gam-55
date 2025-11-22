@@ -293,6 +293,23 @@ func _on_character_sprite_animation_finished() -> void:
 func _on_character_sprite_animation_looped() -> void:
 	pass # Replace with function body.
 
+# override taking damage since player uses lifeforce instead of hp
+func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:
+	if is_invulerable: return
+	is_invulerable = true
+	
+	current_invulerability_frames = invulerability_frames
+	current_hitflash_frames = hitflash_frames
+
+	($CharacterSprite as AnimatedSprite2D).modulate = Color(18.892, 18.892, 18.892)
+
+	# dealing damage
+	lifeforce_remaining -= payload.damage
+
+	if lifeforce_remaining <= 0.0:
+		lifeforce_remaining = 0.0
+		SignalBus.lifeforce_remaining_updated.emit(lifeforce_remaining)
+		player_die()
 
 func _on_character_sprite_frame_changed() -> void:
 	if sprite == null: return
