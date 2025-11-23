@@ -19,10 +19,13 @@ signal player_jumped
 @export var has_dash := false
 @export var input_buffer_frames := 15
 
+@export var lifeforce_regen: float = 3.0
 @export var lifeforce_seconds: float = 20.0
 
 enum {DASHING, ATTACKING, MOVING, IDLE, JUMPING, FALLING, WALL_CLIMBING, DEAD}
 @onready var sprite: AnimatedSprite2D = $CharacterSprite
+@onready var enemy_die = $sfx/enemy_die
+@onready var hurt_sfx = $sfx/hurt_sfx
 
 var normal_attack_ability: PackedScene = preload("../../abilities/player_default_attack/player_default_attack.tscn")
 
@@ -53,11 +56,16 @@ func _ready() -> void:
 	cur_variable_jump_frames = max_variable_jump_frames
 	($CoyoteTimer as Timer).timeout.connect(end_coyote_time)
 	player_jumped.connect(end_coyote_time)
-
+	SignalBus.enemy_killed.connect(on_enemy_killed)
 	lifeforce_remaining = lifeforce_seconds
 
 	# hook into lifetimer
 	enter_idle_state()
+
+func on_enemy_killed():
+	lifeforce_remaining += lifeforce_regen
+	SignalBus.lifeforce_remaining_updated.emit(lifeforce_remaining)
+	enemy_die.play()
 
 func enter_attack_state() -> void:
 	if cur_state == ATTACKING: return
@@ -108,6 +116,12 @@ func update_state_text() -> void:
 	match cur_state:
 		DASHING:
 			$Label.text = "State DASHING"
+			var instance: Node2D = normal_attack_ability.instantiate()
+			get_parent().add_child(instance)
+			instance.global_position = global_position
+
+			if sprite.flip_h == false:
+				instance.scale = Vector2(-1, 1)
 		ATTACKING:
 			$Label.text = "State ATTACKING"
 		MOVING:
@@ -305,6 +319,7 @@ func _on_hurtbox_component_hit_by_hitbox(payload: AbilityStats) -> void:
 
 	# dealing damage
 	lifeforce_remaining -= payload.damage
+	hurt_sfx.play()
 
 	if lifeforce_remaining <= 0.0:
 		lifeforce_remaining = 0.0

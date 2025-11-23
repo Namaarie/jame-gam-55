@@ -20,9 +20,11 @@ signal transition_to_scene(new_scene: PackedScene)
 
 signal advance_level
 
+signal enemy_killed
+
 func _ready() -> void:
-    quit_game.connect(on_quit_game)
+	quit_game.connect(on_quit_game)
 
 func on_quit_game() -> void:
-    print("quitting game...")
-    get_tree().quit()
+	print("quitting game...")
+	get_tree().quit()

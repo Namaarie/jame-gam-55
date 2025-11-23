@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Enums="*res://entities/globals/global_enums.gd"
 SignalBus="*res://entities/globals/signal_bus.gd"
 SceneManager="*res://ui/scene_manager.tscn"
+bgm_manager="*res://sound/bgm_manager.tscn"
 
 [debug]
 
@@ -31,7 +32,11 @@ gdscript/warnings/unsafe_call_argument=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+enabled=PackedStringArray()
+
+[global_group]
+
+player=""
 
 [input]
 

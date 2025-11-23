@@ -42,3 +42,4 @@ func quit_to_main_menu() -> void:
 
 func restart_level() -> void:
 	get_tree().reload_current_scene()
+	transition_to_scene(load("res://levels/level_%d.tscn" % current_level))

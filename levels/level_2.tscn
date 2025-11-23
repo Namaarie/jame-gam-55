@@ -1,15 +1,16 @@
 [gd_scene load_steps=9 format=4 uid="uid://dtmunp61s405m"]
 
+[ext_resource type="Script" uid="uid://bgjkvscrs6eyw" path="res://levels/scripts/level_2.gd" id="1_at1ld"]
 [ext_resource type="Texture2D" uid="uid://cavoho2gkh36d" path="res://levels/backgrounds/new_background/new_background_1.png" id="1_ilhis"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="2_0srwa"]
 [ext_resource type="Texture2D" uid="uid://dmq8jv2o5q63s" path="res://levels/backgrounds/new_background/new_background_2.png" id="2_ep78u"]
 [ext_resource type="PackedScene" uid="uid://07qm4w0xtu5s" path="res://entities/characters/player/player.tscn" id="3_0srwa"]
 [ext_resource type="Texture2D" uid="uid://dbqrjis4axovp" path="res://levels/backgrounds/new_background/new_background_3.png" id="3_dfjjl"]
 [ext_resource type="TileSet" uid="uid://ct1am8ekw8vik" path="res://levels/tilesets/tileset_settings.tres" id="4_dfjjl"]
-[ext_resource type="AudioStream" uid="uid://dqwcfrcu1snlr" path="res://sound/background_music/level_bgm.mp3" id="8_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://cmdp1al3xtnut" path="res://entities/next_level_object/next_level_zone.tscn" id="9_at1ld"]
 
 [node name="Level_2" type="Node2D"]
+script = ExtResource("1_at1ld")
 
 [node name="parallax_background" type="Node2D" parent="."]
 position = Vector2(576, 324)
@@ -52,11 +53,6 @@ tile_set = ExtResource("4_dfjjl")
 
 [node name="Player" parent="." instance=ExtResource("3_0srwa")]
 position = Vector2(342, -65)
-
-[node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_dfjjl")
-autoplay = true
-parameters/looping = true
 
 [node name="NextLevelZone" parent="." instance=ExtResource("9_at1ld")]
 position = Vector2(1841, -2183)

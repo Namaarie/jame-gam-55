@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0kvm58fbb80m"]
+
+[ext_resource type="PackedScene" uid="uid://o0p2t50um1mt" path="res://entities/characters/character.tscn" id="1_yfh4y"]
+[ext_resource type="Script" uid="uid://cud4euqls2tqm" path="res://entities/characters/enemies/enemy.gd" id="2_bbsrs"]
+[ext_resource type="PackedScene" uid="uid://ctdb1aath35a7" path="res://components/hitbox_component.tscn" id="3_jlfvl"]
+[ext_resource type="Texture2D" uid="uid://bym8j6bfhgpet" path="res://entities/characters/enemies/golem/golem_walk.png" id="4_yfh4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfh4y"]
+size = Vector2(483, 517)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbsrs"]
+atlas = ExtResource("4_yfh4y")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlfvl"]
+atlas = ExtResource("4_yfh4y")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y0vn"]
+atlas = ExtResource("4_yfh4y")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnqak"]
+atlas = ExtResource("4_yfh4y")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qmu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbsrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlfvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y0vn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnqak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" instance=ExtResource("1_yfh4y")]
+script = ExtResource("2_bbsrs")
+contact_damage = 10.0
+team = 2
+
+[node name="CharacterSprite" parent="." index="2"]
+visible = false
+
+[node name="HitboxComponent" parent="." index="3" instance=ExtResource("3_jlfvl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(-9.5, -7.5)
+shape = SubResource("RectangleShape2D_yfh4y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="4"]
+scale = Vector2(-11, 11)
+sprite_frames = SubResource("SpriteFrames_3qmu0")
+autoplay = "default"
+frame_progress = 0.38050643

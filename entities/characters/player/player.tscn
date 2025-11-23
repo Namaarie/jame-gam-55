@@ -1,8 +1,7 @@
-[gd_scene load_steps=56 format=3 uid="uid://07qm4w0xtu5s"]
+[gd_scene load_steps=59 format=3 uid="uid://07qm4w0xtu5s"]
 
 [ext_resource type="Script" uid="uid://culmapmwppxfn" path="res://entities/characters/player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://o0p2t50um1mt" path="res://entities/characters/character.tscn" id="1_sybl7"]
-[ext_resource type="Texture2D" uid="uid://dupmkd3y5dawc" path="res://icon.svg" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://21sqffgxja1t" path="res://gamelogic/entity_stats.gd" id="3_0s3gd"]
 [ext_resource type="Texture2D" uid="uid://hknh14rc5r2n" path="res://entities/characters/player/spritesheets/player_dash.png" id="3_8t03j"]
 [ext_resource type="Texture2D" uid="uid://cq5us0y5wfys" path="res://entities/characters/player/spritesheets/player_die.png" id="4_2ieo8"]
@@ -12,8 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://clx0dwqll3bx5" path="res://entities/characters/player/spritesheets/player_normal_attack.png" id="8_wodsf"]
 [ext_resource type="Texture2D" uid="uid://bd31g8vkerdgt" path="res://entities/characters/player/spritesheets/player_run.png" id="9_32hag"]
 [ext_resource type="Texture2D" uid="uid://gj13iu7tvq84" path="res://entities/characters/player/spritesheets/player_up_attack.png" id="10_tqiix"]
+[ext_resource type="Texture2D" uid="uid://durfs00c4rgjs" path="res://entities/characters/player/spritesheets/dash_trail.png" id="12_afbhy"]
 [ext_resource type="PackedScene" uid="uid://xwq6e8wjfs7n" path="res://ui/in_game_ui/in_game_ui.tscn" id="13_2jd2e"]
+[ext_resource type="Script" uid="uid://2nif3gf1owb4" path="res://entities/characters/player/sfx.gd" id="15_np65q"]
+[ext_resource type="AudioStream" uid="uid://boxrmqsn0rklr" path="res://sound/sound_effects/player/player_jump.wav" id="16_afbhy"]
+[ext_resource type="AudioStream" uid="uid://o6lu1figfivg" path="res://sound/sound_effects/player/player_dash.wav" id="17_m8clj"]
+[ext_resource type="AudioStream" uid="uid://dy5myf0u3dnrj" path="res://sound/sound_effects/player/player_attack.wav" id="18_lhopy"]
 [ext_resource type="FontFile" uid="uid://dpvfa5xanrt1y" path="res://fonts/Minecraftia-Regular.ttf" id="18_ou7en"]
+[ext_resource type="AudioStream" uid="uid://cjgqtxk34qa6f" path="res://sound/sound_effects/player/player_hurt.wav" id="19_nopo2"]
+[ext_resource type="AudioStream" uid="uid://c03b77jcropv" path="res://sound/sound_effects/enemy/enemy_die.wav" id="20_afbhy"]
 
 [sub_resource type="Resource" id="Resource_2jd2e"]
 script = ExtResource("3_0s3gd")
@@ -89,18 +95,6 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jd2rm"]
 atlas = ExtResource("7_kb6p2")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q28gw"]
-atlas = ExtResource("7_kb6p2")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ge24q"]
-atlas = ExtResource("7_kb6p2")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnw6m"]
-atlas = ExtResource("7_kb6p2")
-region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1so5t"]
 atlas = ExtResource("6_yllr7")
@@ -231,15 +225,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jd2rm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q28gw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ge24q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pnw6m")
 }],
 "loop": true,
 "name": &"hurt",
@@ -333,7 +318,7 @@ alpha_curve = SubResource("CurveTexture_g1dw6")
 font = ExtResource("18_ou7en")
 font_size = 32
 
-[node name="Player" instance=ExtResource("1_sybl7")]
+[node name="Player" groups=["player"] instance=ExtResource("1_sybl7")]
 script = ExtResource("1_oul6g")
 coyote_time = 0.1
 speed = 100.0
@@ -342,13 +327,14 @@ air_resistance = 7.0
 jump_velocity = 30.0
 gravity_multiplier = 10.0
 max_variable_jump_frames = 10
-dash_strength = 50.0
-dash_cooldown = 1.0
+dash_strength = 35.0
+dash_cooldown = 0.5
 dash_duration_frames = 10
 wall_climb_strength = 0.75
 has_double_jump = true
 has_dash = true
 input_buffer_frames = 15
+lifeforce_regen = 3.0
 lifeforce_seconds = 20.0
 stats = SubResource("Resource_2jd2e")
 team = 1
@@ -366,13 +352,13 @@ texture_filter = 1
 position = Vector2(13, 37)
 scale = Vector2(12, 12)
 sprite_frames = SubResource("SpriteFrames_n0b8q")
-animation = &"normal_attack"
+animation = &"hurt"
 autoplay = "run"
 
 [node name="DashTrail" type="GPUParticles2D" parent="." index="3"]
 emitting = false
 amount = 100
-texture = ExtResource("2_rkbax")
+texture = ExtResource("12_afbhy")
 lifetime = 0.5
 explosiveness = 0.15
 process_material = SubResource("ParticleProcessMaterial_2jd2e")
@@ -394,12 +380,33 @@ one_shot = true
 [node name="InGameUI" parent="PlayerUI" index="0" instance=ExtResource("13_2jd2e")]
 
 [node name="Label" type="Label" parent="." index="8"]
+visible = false
 offset_left = -40.0
 offset_top = -144.0
 offset_right = 40.0
 offset_bottom = -88.0
 text = "test"
 label_settings = SubResource("LabelSettings_np65q")
+
+[node name="sfx" type="Node2D" parent="." index="9"]
+script = ExtResource("15_np65q")
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="sfx" index="0"]
+stream = ExtResource("16_afbhy")
+
+[node name="dash_sfx" type="AudioStreamPlayer" parent="sfx" index="1"]
+stream = ExtResource("17_m8clj")
+pitch_scale = 0.83
+
+[node name="attack_sfx" type="AudioStreamPlayer" parent="sfx" index="2"]
+stream = ExtResource("18_lhopy")
+
+[node name="hurt_sfx" type="AudioStreamPlayer" parent="sfx" index="3"]
+stream = ExtResource("19_nopo2")
+volume_db = 5.81
+
+[node name="enemy_die" type="AudioStreamPlayer" parent="sfx" index="4"]
+stream = ExtResource("20_afbhy")
 
 [connection signal="animation_finished" from="CharacterSprite" to="." method="_on_character_sprite_animation_finished"]
 [connection signal="animation_looped" from="CharacterSprite" to="." method="_on_character_sprite_animation_looped"]

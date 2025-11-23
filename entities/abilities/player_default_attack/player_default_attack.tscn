@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://lhr2u8583m2s" path="res://entities/abilities/ability.tscn" id="1_6ldmq"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6ldmq"]
-points = PackedVector2Array(-232, -80, 72, -112, 72, 136, -56, 64)
+points = PackedVector2Array(-394, -312, 362, -316, 339, 406, -394, 383)
 
 [node name="PlayerDefaultAttack" instance=ExtResource("1_6ldmq")]
 team = 1
@@ -12,4 +12,4 @@ team = 1
 shape = SubResource("ConvexPolygonShape2D_6ldmq")
 
 [node name="DestroyTimer" parent="." index="2"]
-wait_time = 0.1
+wait_time = 10.0
